@@ -15,6 +15,6 @@
         }
     ],
     "arguments": [
-        {"name": "directory", "type": "wstr", "desc": "directory", "optional": false}
+        {"name": "directory", "type": "str", "desc": "directory", "optional": false}
     ]
 }

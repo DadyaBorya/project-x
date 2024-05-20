@@ -1,6 +1,7 @@
 use std::error::Error;
 use std::io;
 use std::io::Write;
+use std::ops::Add;
 use std::path::Path;
 use coffee_ldr::loader::beacon_pack::BeaconPack;
 use coffee_ldr::loader::Coffee;
@@ -140,7 +141,7 @@ fn handle_run_command(state: &mut State) {
                 match coffee.execute(
                     Some(unhexilified.as_ptr()),
                     Some(unhexilified.len()),
-                    None
+                    None,
                 ) {
                     Ok(res) => {
                         println!("{res}");
@@ -220,7 +221,7 @@ fn handle_set_command(input: &str, state: &mut State) {
     }
 
     let arg_name = split_args[0];
-    let value = split_args[1];
+    let mut value = split_args[1];
 
     let payload = state.payloads.iter_mut().find(|x| x.arg.name.eq(arg_name));
 
@@ -232,6 +233,27 @@ fn handle_set_command(input: &str, state: &mut State) {
     let payload = payload.unwrap();
 
     match payload.arg.r#type.as_str() {
+        "wstr"
+        | "str" => {
+            if value.len() < 3 {
+                println!("Invalid value {}", value);
+                return;
+            }
+
+            if !value.starts_with('"') || !value.ends_with('"') {
+                println!("Invalid value {}", value);
+                return;
+            }
+
+            value = &value[1..];
+
+            value = &value[..value.len() - 1];
+
+            if let Ok(_) = value.parse::<i64>() {
+                println!("Can't apply number to {}", payload.arg.r#type);
+                return;
+            }
+        }
         "int" => {
             let result = value.parse::<i32>();
 
@@ -383,7 +405,27 @@ fn handle_use_command(input: &str, state: &mut State) {
 
     match state.current_name.as_ref() {
         None => println!("Can't select config with name or index {}", use_term),
-        Some(name) => println!("Selected config with name {}", name)
+        Some(name) => {
+
+            println!("Selected config with name {}", name);
+
+            if !state.payloads.is_empty() {
+                let args_str = state.payloads
+                    .iter()
+                    .map(|x| {
+                       let mut str = String::new();
+                        
+                        if !x.arg.optional {
+                            str = "*".to_string();
+                        }
+                        
+                        str = format!("{}{} {}", str, x.arg.name, x.arg.r#type);
+                        return str.to_string();
+                    }).collect::<Vec<String>>().join(", ");
+                
+                println!("help: {}", args_str);
+            }
+        }
     }
 }
 
