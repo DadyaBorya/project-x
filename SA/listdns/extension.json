@@ -1,0 +1,18 @@
+{
+    "name": "listdns",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/listdns",
+    "desc": "List DNS cache entries. Attempt to query and resolve each",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "listdns.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "listdns.x86.o"
+        }
+    ],
+    "arguments": []
+}

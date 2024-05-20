@@ -1,0 +1,20 @@
+{
+    "name": "netgroup",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/netgroup",
+    "desc": "List groups from the default or specified domain",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "netgroup.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "netgroup.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "domain", "type": "wstr", "desc": "domain", "optional": true}
+    ]
+}

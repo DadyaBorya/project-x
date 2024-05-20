@@ -1,0 +1,22 @@
+{
+    "name": "nslookup",
+    "desc": "Make a DNS query. DNS server is the server you want to query (do not specify or 0 for default) record type is something like A, AAAA, or ANY. Some situations are limited due to observed crashes",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/nslookup",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "nslookup.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "nslookup.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "hostname", "type": "wstr", "desc": "hostname", "optional": false},
+        {"name": "dns_server", "type": "wstr", "desc": "dns server", "optional": true},
+        {"name": "record_type", "type": "wstr", "desc": "record type", "optional": true}
+    ]
+}

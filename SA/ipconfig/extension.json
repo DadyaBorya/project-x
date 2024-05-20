@@ -1,0 +1,18 @@
+{
+    "name": "ipconfig",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/ipconfig",
+    "desc": "List IPv4 address, hostname, and DNS server",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "ipconfig.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "ipconfig.x86.o"
+        }
+    ],
+    "arguments": []
+}

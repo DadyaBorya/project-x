@@ -1,0 +1,21 @@
+{
+    "name": "sc_query",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/sc_query",
+    "desc": "sc query implementation in BOF",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "sc_query.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "sc_query.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "service_name", "type": "wstr", "desc": "service name", "optional": true},
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true}
+    ]
+}

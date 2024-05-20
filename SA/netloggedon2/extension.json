@@ -1,0 +1,20 @@
+{
+    "name": "netloggedon2",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/netloggedon2",
+    "desc": "Modified version of netloggedon that supports BOFHound",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "netloggedon2.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "netloggedon2.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "hostname", "type": "wstr", "desc": "hostname", "optional": false}
+    ]
+}

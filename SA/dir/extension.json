@@ -1,0 +1,20 @@
+{
+    "name": "dir",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/dir",
+    "desc": "List files in a directory. Supports wildcards (e.g. 'C:/Windows/S*') unlike the CobaltStrike ls command",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "dir.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "dir.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "directory", "type": "wstr", "desc": "directory", "optional": false}
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "netuserenum",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/netuserenum",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "netuserenum.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "netuserenum.x86.o"
+        }
+    ],
+    "arguments": []
+}

@@ -1,0 +1,20 @@
+{
+    "name": "windowlist",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/windowlist",
+    "desc": "List visible windows in the current user session",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "windowlist.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "windowlist.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "all", "type": "wstr", "desc": "all", "optional": true}
+    ]
+}

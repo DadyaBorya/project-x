@@ -1,0 +1,20 @@
+{
+    "name": "get-netsession",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/get-netsession",
+    "desc": "Enumerate sessions on the local or specified computer",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "get-netsession.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "get-netsession.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "computer", "type": "wstr", "desc": "computer", "optional": true}
+    ]
+}

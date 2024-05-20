@@ -1,0 +1,21 @@
+{
+    "name": "netlocalgroup2",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/netlocalgroup2",
+    "desc": "List local groups from the local or specified computer",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "netlocalgroup2.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "netlocalgroup2.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "groupname", "type": "wstr", "desc": "groupname", "optional": false},
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true}
+    ]
+}

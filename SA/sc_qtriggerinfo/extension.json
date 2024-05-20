@@ -1,0 +1,21 @@
+{
+    "name": "sc_qtriggerinfo",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/sc_qtriggerinfo",
+    "desc": "Query a service for trigger conditions",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "sc_qtriggerinfo.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "sc_qtriggerinfo.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "service_name", "type": "wstr", "desc": "service name", "optional": false},
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true}
+    ]
+}

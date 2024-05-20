@@ -1,0 +1,17 @@
+{
+    "name": "nonpagedldapsearch",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/nonpagedldapsearch",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "nonpagedldapsearch.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "nonpagedldapsearch.x86.o"
+        }
+    ],
+    "arguments": []
+}

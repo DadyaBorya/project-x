@@ -1,0 +1,21 @@
+{
+    "name": "netuser",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/netuser",
+    "desc": "Get info about specific user. Pull from domain if a domainname is specified",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "netuser.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "netuser.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "username", "type": "wstr", "desc": "username", "optional": false},
+        {"name": "domain", "type": "wstr", "desc": "domain", "optional": true}
+    ]
+}

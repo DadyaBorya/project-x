@@ -1,0 +1,20 @@
+{
+    "name": "listmods",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/listmods",
+    "desc": "List process modules (DLL). Target current process if PID is empty. Complement to driversigs to determine if our process was injected by AV/EDR",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "listmods.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "listmods.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "pid", "type": "int", "desc": "pid", "optional": true}
+    ]
+}

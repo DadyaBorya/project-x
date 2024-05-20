@@ -1,0 +1,21 @@
+{
+    "name": "vssenum",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/vssenum",
+    "desc": "Enumerate Shadow Copies on some Server 2012+ servers",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "vssenum.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "vssenum.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "hostname", "type": "wstr", "desc": "hostname", "optional": false},
+        {"name": "sharename", "type": "wstr", "desc": "sharename", "optional": true}
+    ]
+}

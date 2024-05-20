@@ -1,0 +1,20 @@
+{
+    "name": "sc_enum",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/sc_enum",
+    "desc": "Enumerate services for qc, query, qfailure, and qtriggers info",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "sc_enum.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "sc_enum.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true}
+    ]
+}

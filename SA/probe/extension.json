@@ -1,0 +1,21 @@
+{
+    "name": "probe",
+    "desc": "Check if a specific port is open",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/probe",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "probe.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "probe.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "host", "type": "str", "desc": "host", "optional": false},
+        {"name": "port", "type": "int", "desc": "port", "optional": false}
+    ]
+}

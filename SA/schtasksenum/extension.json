@@ -1,0 +1,20 @@
+{
+    "name": "schtasksenum",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/schtasksenum",
+    "desc": "Enumerate scheduled tasks on the local or remote computer",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "schtasksenum.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "schtasksenum.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true}
+    ]
+}

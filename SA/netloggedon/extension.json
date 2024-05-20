@@ -1,0 +1,20 @@
+{
+    "name": "netloggedon",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/netloggedon",
+    "desc": "Return users logged on the local or remote computer",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "netloggedon.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "netloggedon.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "hostname", "type": "wstr", "desc": "hostname", "optional": false}
+    ]
+}

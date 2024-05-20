@@ -1,0 +1,18 @@
+{
+    "name": "uptime",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/uptime",
+    "desc": "List system boot time and how long it has been running",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "uptime.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "uptime.x86.o"
+        }
+    ],
+    "arguments": []
+}

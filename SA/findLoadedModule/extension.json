@@ -1,0 +1,21 @@
+{
+    "name": "findLoadedModule",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/findLoadedModule",
+    "desc": "Find what processes *modulepart* are loaded into, optionally searching just *procnamepart*",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "findLoadedModule.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "findLoadedModule.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "modulepart", "type": "wstr", "desc": "modulepart", "optional": false},
+        {"name": "procnamepart", "type": "int", "desc": "procnamepart", "optional": true}
+    ]
+}

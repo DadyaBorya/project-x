@@ -1,0 +1,19 @@
+{
+    "name": "get_password_policy",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/get_password_policy",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "get_password_policy.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "get_password_policy.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "hostname", "type": "wstr", "desc": "hostname", "optional": false}
+    ]
+}

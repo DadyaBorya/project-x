@@ -1,0 +1,18 @@
+{
+    "name": "list_firewall_rules",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/list_firewall_rules",
+    "desc": "List Windows firewall rules",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "list_firewall_rules.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "list_firewall_rules.x86.o"
+        }
+    ],
+    "arguments": []
+}

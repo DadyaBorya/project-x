@@ -1,0 +1,18 @@
+{
+    "name": "adcs_enum_com",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/adcs_enum_com",
+    "desc": "Enumerate CAs and templates in the AD using ICertConfig COM object",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "adcs_enum_com.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "adcs_enum_com.x86.o"
+        }
+    ],
+    "arguments": []
+}

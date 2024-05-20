@@ -1,0 +1,23 @@
+{
+    "name": "reg_query",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/reg_query",
+    "desc": "Query a registry value or enumerate a single key",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "reg_query.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "reg_query.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "hostname", "type": "wstr", "desc": "hostname", "optional": true},
+        {"name": "hive", "type": "wstr", "desc": "hive", "optional": false},
+        {"name": "path", "type": "wstr", "desc": "path", "optional": false},
+        {"name": "value_to_query", "type": "wstr", "desc": "valueto query", "optional": false}
+    ]
+}

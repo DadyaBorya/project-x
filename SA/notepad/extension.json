@@ -1,0 +1,17 @@
+{
+    "name": "notepad",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/notepad",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "notepad.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "notepad.x86.o"
+        }
+    ],
+    "arguments": []
+}

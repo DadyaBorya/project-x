@@ -1,0 +1,21 @@
+{
+    "name": "schtasksquery",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/schtasksquery",
+    "desc": "Query the given task on the local or remote computer",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "schtasksquery.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "schtasksquery.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true},
+        {"name": "taskpath", "type": "wstr", "desc": "taskpath", "optional": false}
+    ]
+}

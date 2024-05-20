@@ -1,0 +1,20 @@
+{
+    "name": "tasklist",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/tasklist",
+    "desc": "List running processes including PID, PPID, and ComandLine (uses wmi)",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "tasklist.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "tasklist.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true}
+    ]
+}

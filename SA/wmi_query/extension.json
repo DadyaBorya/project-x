@@ -1,0 +1,21 @@
+{
+    "name": "wmi_query",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/wmi_query",
+    "desc": "Run a wmi query and display results in CSV format",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "wmi_query.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "wmi_query.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true},
+        {"name": "namespace", "type": "wstr", "desc": "namespace", "optional": true}
+    ]
+}

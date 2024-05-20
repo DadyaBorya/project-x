@@ -1,0 +1,20 @@
+{
+    "name": "enum_filter_driver",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/enum_filter_driver",
+    "desc": "Enumerate filter drivers", 
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "enum_filter_driver.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "enum_filter_driver.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "computer", "type": "str", "desc": "computer", "optional": true}
+    ]
+}

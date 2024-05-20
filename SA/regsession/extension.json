@@ -1,0 +1,17 @@
+{
+    "name": "regsession",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/regsession",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "regsession.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "regsession.x86.o"
+        }
+    ],
+    "arguments": []
+}

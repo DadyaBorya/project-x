@@ -1,0 +1,21 @@
+{
+    "name": "sc_qfailure",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/sc_qfailure",
+    "desc": "Query a service for failure conditions",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "sc_qfailure.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "sc_qfailure.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "service_name", "type": "wstr", "desc": "service name", "optional": false},
+        {"name": "server", "type": "wstr", "desc": "server", "optional": true}
+    ]
+}

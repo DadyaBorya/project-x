@@ -1,0 +1,20 @@
+{
+    "name": "nettime",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/nettime",
+    "desc": "Display time on remote computer",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "nettime.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "nettime.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "hostname", "type": "wstr", "desc": "hostname", "optional": false}
+    ]
+}

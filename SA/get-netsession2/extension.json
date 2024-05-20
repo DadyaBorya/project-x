@@ -1,0 +1,22 @@
+{
+    "name": "get-netsession2",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/get-netsession2",
+    "desc": "Modified version of netsession that supports BOFHound",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "get-netsession2.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "get-netsession2.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "computer", "type": "wstr", "desc": "computer", "optional": true},
+        {"name": "resolution_method", "type": "wstr", "desc": "resolution method", "optional": true},
+        {"name": "dns_server", "type": "wstr", "desc": "dns server", "optional": true}
+    ]
+}

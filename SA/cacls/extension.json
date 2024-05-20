@@ -1,0 +1,20 @@
+{
+    "name": "cacls",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/cacls",
+    "desc": "List user permissions for the specified file, wildcards supported",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "cacls.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "cacls.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "filepath", "type": "wstr", "desc": "filepath", "optional": false}
+    ]
+}

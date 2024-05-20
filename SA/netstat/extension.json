@@ -1,0 +1,18 @@
+{
+    "name": "netstat",
+    "repo_url": "https://github.com/trustedsec/CS-Situational-Awareness-BOF/tree/master/SA/netstat",
+    "desc": "TCP and UDP IPv4 listing ports",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "netstat.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "netstat.x86.o"
+        }
+    ],
+    "arguments": []
+}
