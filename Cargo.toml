@@ -1,0 +1,11 @@
+[package]
+name = "project-x"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clearscreen = "3.0.0"
+serde_json = "1.0"
+serde = { version = "1.0.202", features = ["derive"] }
+comfy-table = "7.1.1"
+coffee-ldr = "0.1.2"
