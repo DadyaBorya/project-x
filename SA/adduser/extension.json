@@ -1,0 +1,22 @@
+{
+    "name": "adduser",
+    "repo_url": "https://github.com/trustedsec/CS-Remote-OPs-BOF/blob/main/Remote/adduser",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "adduser.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "adduser.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name":"username","type":"wstr","desc":"The name of the new user","optional":false},
+        {"name":"password","type":"wstr","desc":"The password of the new user","optional":false},
+        {"name":"server","type":"wstr","desc":"If entered, the user will be created on that machine. If not, the local machine will be used.","optional":true}
+    ],
+    "desc": "Add a new user to a machine"
+}

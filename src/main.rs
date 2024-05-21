@@ -1,7 +1,6 @@
 use std::error::Error;
 use std::io;
 use std::io::Write;
-use std::ops::Add;
 use std::path::Path;
 use coffee_ldr::loader::beacon_pack::BeaconPack;
 use coffee_ldr::loader::Coffee;
@@ -52,8 +51,7 @@ fn main_loop() -> Result<(), Box<dyn Error>> {
             cmd if cmd.starts_with("use ") => handle_use_command(cmd, &mut state),
             "options" => print_options(&mut state),
             "cur" => print_current(&mut state),
-            cmd if cmd.starts_with("set ") => handle_set_command(cmd, &mut state),
-            "run" => handle_run_command(&mut state),
+            cmd if cmd.contains("run") => handle_run_command(cmd, &mut state),
             "exit" => break,
             str => print_unknown_command(str)
         }
@@ -63,22 +61,9 @@ fn main_loop() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn handle_run_command(state: &mut State) {
+fn handle_run_command(input: &str, state: &mut State) {
     if state.current_name.is_none() {
         println!("Now no config file selected");
-        return;
-    }
-
-    let mut is_exit = false;
-
-    for payload in state.payloads.iter() {
-        if !payload.arg.optional && payload.value.is_empty() {
-            println!("{} can't be empty", payload.arg.name);
-            is_exit = true;
-        }
-    }
-
-    if is_exit {
         return;
     }
 
@@ -87,6 +72,62 @@ fn handle_run_command(state: &mut State) {
     if config_files.is_err() {
         println!("Can't get config files");
         return;
+    }
+    let tokens: Vec<&str> = if input.len() > 3 {
+        input[4..].split_whitespace().collect()
+    } else { vec![] };
+
+    if &tokens.len() < &state.payloads.iter().filter(|payload| !payload.arg.optional).count() {
+        println!("Not enough args. Write \"options\" to get all args");
+        return;
+    }
+
+
+    for (i, payload) in state.payloads.iter_mut().enumerate() {
+        let mut value = tokens[i];
+        match payload.arg.r#type.as_str() {
+            "wstr"
+            | "str" => {
+                if value.len() < 3 {
+                    println!("Invalid value {} for field {}", value, payload.arg.name);
+                    return;
+                }
+
+                if !value.starts_with('"') || !value.ends_with('"') {
+                    println!("Invalid value {} for field {}", value, payload.arg.name);
+                    return;
+                }
+
+                value = &value[1..];
+
+                value = &value[..value.len() - 1];
+
+                if let Ok(_) = value.parse::<i64>() {
+                    println!("Can't apply number to {} for field {}", payload.arg.r#type, payload.arg.name);
+                    return;
+                }
+            }
+            "int" => {
+                let result = value.parse::<i32>();
+
+                if result.is_err() {
+                    println!("Can't parse value {} to int 32 for field {}", payload.arg.r#type, payload.arg.name);
+                    return;
+                }
+            }
+            "short" => {
+                let result = value.parse::<i16>();
+
+                if result.is_err() {
+                    println!("Can't parse value {} to short 16 for field {}", payload.arg.r#type, payload.arg.name);
+                    return;
+                }
+            }
+            _ => {}
+        }
+
+
+        payload.value = value.to_string();
     }
 
     if let Some(config_file) =
@@ -205,79 +246,6 @@ fn hexlify_args(payloads: &Vec<Payload>) -> Result<String, String> {
     Ok(hex_buffer)
 }
 
-fn handle_set_command(input: &str, state: &mut State) {
-    if state.current_name.is_none() {
-        println!("Now no config file selected");
-        return;
-    }
-
-    let args_term = &input[4..];
-
-    let split_args: Vec<&str> = args_term.split_whitespace().collect();
-
-    if split_args.len() == 1 {
-        println!("No value is presented");
-        return;
-    }
-
-    let arg_name = split_args[0];
-    let mut value = split_args[1];
-
-    let payload = state.payloads.iter_mut().find(|x| x.arg.name.eq(arg_name));
-
-    if payload.is_none() {
-        println!("Arg name {} is not presented in those payloads", arg_name);
-        return;
-    }
-
-    let payload = payload.unwrap();
-
-    match payload.arg.r#type.as_str() {
-        "wstr"
-        | "str" => {
-            if value.len() < 3 {
-                println!("Invalid value {}", value);
-                return;
-            }
-
-            if !value.starts_with('"') || !value.ends_with('"') {
-                println!("Invalid value {}", value);
-                return;
-            }
-
-            value = &value[1..];
-
-            value = &value[..value.len() - 1];
-
-            if let Ok(_) = value.parse::<i64>() {
-                println!("Can't apply number to {}", payload.arg.r#type);
-                return;
-            }
-        }
-        "int" => {
-            let result = value.parse::<i32>();
-
-            if result.is_err() {
-                println!("Can't parse value {} to int 32", value);
-                return;
-            }
-        }
-        "short" => {
-            let result = value.parse::<i16>();
-
-            if result.is_err() {
-                println!("Can't parse value {} to short 16", value);
-                return;
-            }
-        }
-        _ => {}
-    }
-
-
-    payload.value = value.to_string();
-    println!("{} is set to {}", arg_name, value);
-}
-
 fn print_options(state: &mut State) {
     if state.current_name.is_none() {
         println!("Now no config file selected");
@@ -315,14 +283,13 @@ fn print_options(state: &mut State) {
             .set_content_arrangement(ContentArrangement::Dynamic);
 
         table
-            .set_header(vec!["name", "value", "type", "optional", "description"]);
+            .set_header(vec!["name", "type", "optional", "description"]);
 
 
         for payload in state.payloads.iter() {
             table.add_row(
                 vec![
                     &payload.arg.name,
-                    &payload.value,
                     &payload.arg.r#type,
                     &payload.arg.optional.to_string(),
                     &payload.arg.desc,
@@ -363,8 +330,7 @@ fn print_help() {
         .add_row(vec!["use [name | index]", "Select config by name or by index in current list or search", "use 2"])
         .add_row(vec!["cur", "Print selected config", "cur"])
         .add_row(vec!["options", "Print options for selected config file", "options"])
-        .add_row(vec!["set [arg] [value]", "Set arg value for current config file", "set server home"])
-        .add_row(vec!["run", "Run current config file", "run"])
+        .add_row(vec!["run [..args]", "Run current config file", "run \"C:\\\" 5005"])
         .add_row(vec!["exit", "Exit from app", "exit"]);
 
     println!("{table}");
@@ -406,23 +372,22 @@ fn handle_use_command(input: &str, state: &mut State) {
     match state.current_name.as_ref() {
         None => println!("Can't select config with name or index {}", use_term),
         Some(name) => {
-
             println!("Selected config with name {}", name);
 
             if !state.payloads.is_empty() {
                 let args_str = state.payloads
                     .iter()
                     .map(|x| {
-                       let mut str = String::new();
-                        
+                        let mut str = String::new();
+
                         if !x.arg.optional {
                             str = "*".to_string();
                         }
-                        
+
                         str = format!("{}{} {}", str, x.arg.name, x.arg.r#type);
                         return str.to_string();
                     }).collect::<Vec<String>>().join(", ");
-                
+
                 println!("help: {}", args_str);
             }
         }

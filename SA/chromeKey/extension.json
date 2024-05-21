@@ -1,0 +1,18 @@
+{
+    "name": "chromeKey",
+    "repo_url": "https://github.com/trustedsec/CS-Remote-OPs-BOF/blob/main/Remote/chromeKey",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "chromeKey.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "chromeKey.x86.o"
+        }
+    ],
+    "arguments": [],
+    "desc": "Decrypts the provided base64 encoded Chrome key"
+}

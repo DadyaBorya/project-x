@@ -1,0 +1,21 @@
+{
+    "name": "enableuser",
+    "repo_url": "https://github.com/trustedsec/CS-Remote-OPs-BOF/blob/main/Remote/enableuser",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "enableuser.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "enableuser.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "username", "type": "wstr", "desc": "The user name to activate/enable", "optional": false},
+        {"name": "domain", "type": "wstr", "desc": "The domain/computer for the account. You must give the domain name for the user if it is a domain account, or use \\\"\\\" to target an account on the local machine", "optional": false}
+    ],
+    "desc": "Enables and unlocks the specified user account"
+}

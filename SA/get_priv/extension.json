@@ -1,0 +1,20 @@
+{
+    "name": "get_priv",
+    "repo_url": "https://github.com/trustedsec/CS-Remote-OPs-BOF/blob/main/Remote/get_priv",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "amd64",
+            "path": "get_priv.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "get_priv.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "priveledge_name", "type": "str", "desc": "priveledge_name", "optional": false}
+    ],
+    "desc": "Activate a token privledge"
+}
