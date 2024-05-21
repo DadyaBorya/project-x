@@ -1,0 +1,20 @@
+{
+    "name": "slack_cookie",
+    "repo_url": "https://github.com/trustedsec/CS-Remote-OPs-BOF/blob/main/Remote/slack_cookie",
+    "files": [
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "slack_cookie.x64.o"
+        },
+        {
+            "os": "windows",
+            "arch": "i386",
+            "path": "slack_cookie.x86.o"
+        }
+    ],
+    "arguments": [
+        {"name": "pid", "type": "int", "desc": "pid", "optional": false}
+    ],
+    "desc": ""
+}

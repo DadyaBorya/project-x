@@ -149,9 +149,9 @@ fn handle_run_command(input: &str, state: &mut State) {
         let os_file_path = Path::new(CONFIGS_PATH)
             .join(Path::new(&config_file.name))
             .join(os_file_path);
-
+    
         let result = file_service::read_file_to_u8_array(os_file_path.to_str().unwrap());
-
+        
         if result.is_err() {
             println!("Can't read {:?}", os_file_path);
             return;
